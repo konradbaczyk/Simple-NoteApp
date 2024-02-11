@@ -11,7 +11,6 @@
   --blue-color: #415a77;
   --blue-light-color: #778da9;
   --light-color: #e0e1dd;
-  --error-color: rgb(255, 22, 22);
 }
 
 html {
@@ -80,6 +79,12 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-display {
+  display: block;
+  animation: showItem 0.5s;
 }
 
 .modal-add-note {
@@ -108,7 +113,7 @@ body {
   font-size: 1.4rem;
   margin-bottom: 0.3em;
 }
-.modal-add-note__select, .modal-add-note__textarea, .modal-add-note__error {
+.modal-add-note__select, .modal-add-note__textarea, .modal-add-note__callback {
   margin-bottom: 0.9em;
 }
 .modal-add-note__select {
@@ -122,9 +127,19 @@ body {
   padding: 0.5em;
   font-size: 1.4rem;
 }
-.modal-add-note__error {
+.modal-add-note__callback {
   font-size: 1.4rem;
-  color: var(--error-color);
+  visibility: hidden;
+}
+.modal-add-note .callback-rejected {
+  color: red;
+}
+.modal-add-note .callback-accepted {
+  color: lime;
+}
+.modal-add-note .callback-visible {
+  visibility: visible;
+  animation: showItem 0.2s;
 }
 .modal-add-note__buttons {
   display: flex;
@@ -169,6 +184,7 @@ body {
   border-radius: 25px;
   box-shadow: 0 0 5px var(--blue-light-color);
   overflow: hidden;
+  animation: showItem 0.5s;
 }
 .note__header {
   padding: 1em;
@@ -223,7 +239,7 @@ Extra large	xl	≥1200px */
     min-height: 11rem;
     font-size: 1.6rem;
   }
-  .modal-add-note__error {
+  .modal-add-note__callback {
     font-size: 1.6rem;
   }
   .modal-add-note__buttons__cancel-btn, .modal-add-note__buttons__confirm-btn {
@@ -266,7 +282,7 @@ Extra large	xl	≥1200px */
     min-height: 11rem;
     font-size: 1.8rem;
   }
-  .modal-add-note__error {
+  .modal-add-note__callback {
     font-size: 1.8rem;
   }
   .modal-add-note__buttons__cancel-btn, .modal-add-note__buttons__confirm-btn {
@@ -299,7 +315,7 @@ Extra large	xl	≥1200px */
   .modal-add-note__textarea {
     font-size: 1.8rem;
   }
-  .modal-add-note__error {
+  .modal-add-note__callback {
     font-size: 1.8rem;
   }
   .modal-add-note__buttons__cancel-btn, .modal-add-note__buttons__confirm-btn {
@@ -311,5 +327,13 @@ Extra large	xl	≥1200px */
   }
   .note__body {
     font-size: 2rem;
+  }
+}
+@keyframes showItem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -37,7 +37,7 @@
 
 				<label for="category" class="modal-add-note__label">Wybierz kategorię</label>
 				<select id="category" class="modal-add-note__select">
-					<option value="0">-- wybierz kategorię --</option>
+					<option value="0" disabled selected>-- wybierz kategorię --</option>
 					<option value="1">Nauka</option>
 					<option value="1">Praca</option>
 					<option value="1">Zakupy</option>
@@ -45,9 +45,9 @@
 				</select>
 
 				<label for="text" class="modal-add-note__label">Wpisz treść notatki</label>
-				<textarea id="text" class="modal-add-note__textarea"></textarea>
+				<textarea id="text" class="modal-add-note__textarea textarea"></textarea>
 
-				<p class="modal-add-note__error modal-error">Uzupełnij wszystkie dane!</p>
+				<p class="modal-add-note__callback modal-callback">Uzupełnij wszystkie dane!</p>
 
 				<div class="modal-add-note__buttons">
 					<button class="modal-add-note__buttons__cancel-btn modal-cancel-btn">
@@ -62,42 +62,7 @@
 			</div>
 		</section>
 
-		<section class="note-area">
-			<div class="note">
-				<div class="note__header">
-					<h3 class="note__header__title note-title">Tytuł</h3>
-					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
-				</div>
-				<div class="note__body">
-					<p class="note__body__content note-content">Treść</p>
-				</div>
-			</div>
-			<div class="note">
-				<div class="note__header">
-					<h3 class="note__header__title note-title">Tytuł</h3>
-					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
-				</div>
-				<div class="note__body">
-					<p class="note__body__content note-content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta voluptatibus neque aut minima omnis
-						ut maiores dolorum magnam in.
-					</p>
-				</div>
-			</div>
-			<div class="note">
-				<div class="note__header">
-					<h3 class="note__header__title note-title">Tytuł</h3>
-					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
-				</div>
-				<div class="note__body">
-					<p class="note__body__content note-content">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quo cupiditate illo nihil perferendis
-						repudiandae! Commodi culpa distinctio perferendis at doloribus obcaecati quaerat corrupti soluta, minus,
-						temporibus voluptatum, harum iure.
-					</p>
-				</div>
-			</div>
-		</section>
+		<section class="note-area"></section>
 
 		<script src="script.js"></script>
 	</body>

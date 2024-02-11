@@ -10,7 +10,6 @@
 	--blue-color: #415a77;
 	--blue-light-color: #778da9;
 	--light-color: #e0e1dd;
-	--error-color: rgb(255, 22, 22);
 }
 
 html {
@@ -24,7 +23,6 @@ body {
 }
 
 .nav {
-	// position: fixed;
 	max-height: 100px;
 	width: 100%;
 	padding: 2em 1em;
@@ -87,6 +85,12 @@ body {
 	bottom: 0;
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+}
+
+.modal-display {
+	display: block;
+	animation: showItem 0.5s;
 }
 
 .modal-add-note {
@@ -118,7 +122,7 @@ body {
 
 	&__select,
 	&__textarea,
-	&__error {
+	&__callback {
 		margin-bottom: 0.9em;
 	}
 
@@ -135,9 +139,22 @@ body {
 		font-size: 1.4rem;
 	}
 
-	&__error {
+	&__callback {
 		font-size: 1.4rem;
-		color: var(--error-color);
+		visibility: hidden;
+	}
+
+	.callback-rejected {
+		color: red;
+	}
+
+	.callback-accepted {
+		color: lime;
+	}
+
+	.callback-visible {
+		visibility: visible;
+		animation: showItem 0.2s;
 	}
 
 	&__buttons {
@@ -181,8 +198,6 @@ body {
 .note {
 	width: 100%;
 	max-width: 300px;
-	// margin-bottom: 2em;
-	// margin-right: 2em;
 	height: fit-content;
 	background-color: var(--blue-color);
 	color: var(--light-color);
@@ -190,6 +205,8 @@ body {
 	border-radius: 25px;
 	box-shadow: 0 0 5px var(--blue-light-color);
 	overflow: hidden;
+	animation: showItem 0.5s;
+	// z-index: -1;
 
 	&__header {
 		padding: 1em;
@@ -261,7 +278,7 @@ Extra large	xl	≥1200px */
 			font-size: 1.6rem;
 		}
 
-		&__error {
+		&__callback {
 			font-size: 1.6rem;
 		}
 
@@ -327,7 +344,7 @@ Extra large	xl	≥1200px */
 			font-size: 1.8rem;
 		}
 
-		&__error {
+		&__callback {
 			font-size: 1.8rem;
 		}
 
@@ -378,7 +395,7 @@ Extra large	xl	≥1200px */
 			font-size: 1.8rem;
 		}
 
-		&__error {
+		&__callback {
 			font-size: 1.8rem;
 		}
 
@@ -400,5 +417,15 @@ Extra large	xl	≥1200px */
 		&__body {
 			font-size: 2rem;
 		}
+	}
+}
+
+@keyframes showItem {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
