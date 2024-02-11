@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NoteApp</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="./css/main.css" />
+		<script src="https://kit.fontawesome.com/01d0a956d3.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<nav class="nav">
+			<div class="nav__logo">
+				<i class="fa-solid fa-note-sticky"></i>
+				<p>Note<span class="nav__logo__decoration">App</span></p>
+			</div>
+			<div class="nav__btns">
+				<button class="nav__btns__add-btn nav-add-btn">
+					<i class="fa-solid fa-plus"></i>
+					<p>Dodaj</p>
+				</button>
+				<button class="nav__btns__delete-all-btn nav-delete-all-btn">
+					<i class="fa-solid fa-trash-can"></i>
+					<p>Usuń notatki</p>
+				</button>
+			</div>
+		</nav>
+
+		<section class="modal-shadow">
+			<div class="modal-add-note">
+				<h2 class="modal-add-note__title">Dodaj notatkę</h2>
+
+				<label for="category" class="modal-add-note__label">Wybierz kategorię</label>
+				<select id="category" class="modal-add-note__select">
+					<option value="0">-- wybierz kategorię --</option>
+					<option value="1">Nauka</option>
+					<option value="1">Praca</option>
+					<option value="1">Zakupy</option>
+					<option value="1">Dom</option>
+				</select>
+
+				<label for="text" class="modal-add-note__label">Wpisz treść notatki</label>
+				<textarea id="text" class="modal-add-note__textarea"></textarea>
+
+				<p class="modal-add-note__error modal-error">Uzupełnij wszystkie dane!</p>
+
+				<div class="modal-add-note__buttons">
+					<button class="modal-add-note__buttons__cancel-btn modal-cancel-btn">
+						<i class="fa-solid fa-x"></i>
+						<p>Anuluj</p>
+					</button>
+					<button class="modal-add-note__buttons__confirm-btn modal-confirm-btn">
+						<i class="fa-solid fa-floppy-disk"></i>
+						<p>Zapisz</p>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="note-area">
+			<div class="note">
+				<div class="note__header">
+					<h3 class="note__header__title note-title">Tytuł</h3>
+					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
+				</div>
+				<div class="note__body">
+					<p class="note__body__content note-content">Treść</p>
+				</div>
+			</div>
+			<div class="note">
+				<div class="note__header">
+					<h3 class="note__header__title note-title">Tytuł</h3>
+					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
+				</div>
+				<div class="note__body">
+					<p class="note__body__content note-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta voluptatibus neque aut minima omnis
+						ut maiores dolorum magnam in.
+					</p>
+				</div>
+			</div>
+			<div class="note">
+				<div class="note__header">
+					<h3 class="note__header__title note-title">Tytuł</h3>
+					<button class="note__header__delete-btn note-delete-btn"><i class="fas fa-times"></i></button>
+				</div>
+				<div class="note__body">
+					<p class="note__body__content note-content">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quo cupiditate illo nihil perferendis
+						repudiandae! Commodi culpa distinctio perferendis at doloribus obcaecati quaerat corrupti soluta, minus,
+						temporibus voluptatum, harum iure.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<script src="script.js"></script>
+	</body>
+</html>

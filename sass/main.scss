@@ -1,0 +1,399 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--first-dark-color: #0d1b2a;
+	--second-dark-color: #1b263b;
+	--blue-color: #415a77;
+	--blue-light-color: #778da9;
+	--light-color: #e0e1dd;
+	--error-color: rgb(255, 22, 22);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Poppins", sans-serif;
+	background-color: var(--first-dark-color);
+}
+
+.nav {
+	// position: fixed;
+	max-height: 100px;
+	width: 100%;
+	padding: 2em 1em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--second-dark-color);
+	overflow: hidden;
+
+	&__logo {
+		display: flex;
+		gap: 0.3em;
+		color: var(--light-color);
+		font-size: 1.6rem;
+		cursor: default;
+
+		&__decoration {
+			color: var(--blue-light-color);
+		}
+	}
+
+	&__btns {
+		display: flex;
+		gap: 0.5em;
+
+		&__add-btn,
+		&__delete-all-btn {
+			padding: 0.4em 0.5em;
+			display: flex;
+			gap: 0.3em;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.4rem;
+			background-color: var(--light-color);
+			border: 1px solid transparent;
+			border-radius: 25px;
+			transition: background-color 0.3s, color 0.3s, border 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--first-dark-color);
+				color: var(--light-color);
+				border: 1px solid var(--light-color);
+			}
+		}
+	}
+}
+
+// MODAL-ADD-NOTE
+.modal-shadow {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-add-note {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	max-width: 600px;
+	height: fit-content;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: var(--second-dark-color);
+	color: var(--light-color);
+	box-shadow: 0 0 5px var(--blue-light-color);
+	border-radius: 25px;
+
+	&__title {
+		margin-bottom: 0.8em;
+		font-size: 2.4rem;
+	}
+
+	&__label {
+		font-size: 1.4rem;
+		margin-bottom: 0.3em;
+	}
+
+	&__select,
+	&__textarea,
+	&__error {
+		margin-bottom: 0.9em;
+	}
+
+	&__select {
+		padding: 0.5em;
+		font-size: 1.4rem;
+	}
+
+	&__textarea {
+		min-height: 10rem;
+		min-width: 100%;
+		max-width: 100%;
+		padding: 0.5em;
+		font-size: 1.4rem;
+	}
+
+	&__error {
+		font-size: 1.4rem;
+		color: var(--error-color);
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+
+		&__cancel-btn,
+		&__confirm-btn {
+			padding: 0.6em 0.8em;
+			display: flex;
+			gap: 0.3em;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.4rem;
+			background-color: var(--light-color);
+			border: 1px solid transparent;
+			border-radius: 25px;
+			transition: background-color 0.3s, color 0.3s, border 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--first-dark-color);
+				color: var(--light-color);
+				border: 1px solid var(--light-color);
+			}
+		}
+	}
+}
+
+// NOTE CARDS
+.note-area {
+	padding: 2em;
+	display: flex;
+	gap: 2em;
+	justify-content: center;
+	// align-items: start;
+	flex-wrap: wrap;
+}
+
+.note {
+	width: 100%;
+	max-width: 300px;
+	// margin-bottom: 2em;
+	// margin-right: 2em;
+	height: fit-content;
+	background-color: var(--blue-color);
+	color: var(--light-color);
+	font-size: 1.6rem;
+	border-radius: 25px;
+	box-shadow: 0 0 5px var(--blue-light-color);
+	overflow: hidden;
+
+	&__header {
+		padding: 1em;
+		display: flex;
+		justify-content: space-between;
+		background-color: var(--second-dark-color);
+
+		&__title {
+			letter-spacing: 1px;
+		}
+
+		&__delete-btn {
+			font-size: 1.8rem;
+			background-color: var(--second-dark-color);
+			color: var(--light-color);
+			border: 1px solid transparent;
+			transition: scale 0.3s;
+
+			&:hover {
+				scale: 1.2;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__body {
+		padding: 1em;
+	}
+}
+
+/* Small	sm	≥576px
+Medium	md	≥768px
+Extra large	xl	≥1200px */
+
+@media (min-width: 576px) {
+	.nav {
+		&__logo {
+			font-size: 2.2rem;
+		}
+
+		&__btns {
+			gap: 0.6em;
+
+			&__add-btn,
+			&__delete-all-btn {
+				padding: 0.5em 0.7em;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.modal-add-note {
+		&__title {
+			font-size: 2.8rem;
+		}
+
+		&__label {
+			font-size: 1.8rem;
+			margin-bottom: 0.4em;
+		}
+
+		&__select {
+			padding: 0.7em;
+			font-size: 1.6rem;
+		}
+
+		&__textarea {
+			min-height: 11rem;
+			font-size: 1.6rem;
+		}
+
+		&__error {
+			font-size: 1.6rem;
+		}
+
+		&__buttons {
+			&__cancel-btn,
+			&__confirm-btn {
+				padding: 0.7em 0.9em;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.note-area {
+		justify-content: space-evenly;
+	}
+
+	.note {
+		&__header {
+			font-size: 1.8rem;
+
+			&__delete-btn {
+				font-size: 2rem;
+			}
+		}
+
+		&__body {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__logo {
+			font-size: 2.4rem;
+		}
+
+		&__btns {
+			gap: 1.2em;
+
+			&__add-btn,
+			&__delete-all-btn {
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	.modal-add-note {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__label {
+			font-size: 2rem;
+		}
+
+		&__select {
+			font-size: 1.8rem;
+		}
+
+		&__textarea {
+			min-height: 11rem;
+			font-size: 1.8rem;
+		}
+
+		&__error {
+			font-size: 1.8rem;
+		}
+
+		&__buttons {
+			&__cancel-btn,
+			&__confirm-btn {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.note-area {
+		justify-content: space-evenly;
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav {
+		&__logo {
+			font-size: 2.6rem;
+		}
+
+		&__btns {
+			gap: 1.4em;
+
+			&__add-btn,
+			&__delete-all-btn {
+				padding: 0.8em 1em;
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.modal-add-note {
+		&__title {
+			font-size: 3.2rem;
+		}
+
+		&__label {
+			font-size: 2rem;
+		}
+
+		&__select {
+			font-size: 1.8rem;
+		}
+
+		&__textarea {
+			font-size: 1.8rem;
+		}
+
+		&__error {
+			font-size: 1.8rem;
+		}
+
+		&__buttons {
+			&__cancel-btn,
+			&__confirm-btn {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.note-area {
+		// margin-top: 100px;
+		justify-content: start;
+		gap: 4em;
+	}
+
+	.note {
+		&__body {
+			font-size: 2rem;
+		}
+	}
+}
