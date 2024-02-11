@@ -41,6 +41,11 @@ body {
 		font-size: 1.6rem;
 		cursor: default;
 
+		&__icon {
+			height: fit-content;
+			align-self: center;
+		}
+
 		&__decoration {
 			color: var(--blue-light-color);
 		}

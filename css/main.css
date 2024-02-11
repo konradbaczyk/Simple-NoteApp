@@ -41,6 +41,11 @@ body {
   font-size: 1.6rem;
   cursor: default;
 }
+.nav__logo__icon {
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+}
 .nav__logo__decoration {
   color: var(--blue-light-color);
 }
